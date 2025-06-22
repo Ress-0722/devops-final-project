@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"  # Mapping port 80 inside the container to port 8080 on the host
+    volumes:
+      - ./:/usr/share/nginx/html:ro  # Mount local directory (read-only) to container's nginx directory
+    restart: always
